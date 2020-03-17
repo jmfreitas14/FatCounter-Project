@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+a#cabecalho-index {
+    color: #ffffff;
+}
+
+a#cabecalho-index:hover {
+    color: #f7941e;
+}
+
+
+
+
