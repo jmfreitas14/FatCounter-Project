@@ -14,8 +14,8 @@ class Usuario
         } else {
             //caso nao, Cadastrar
             $sql = $pdo->prepare("INSERT INTO usuario (nome_usuario, email, senha) VALUES (:n, :e, :s)");
-            $sql->bindValue(":n", $nome);
             $sql->bindValue(":e", $email);
+            $sql->bindValue(":n", $nome);
             $sql->bindValue(":s", md5($senha));
             $sql->execute();
             return true; //tudo ok
@@ -34,11 +34,25 @@ class Usuario
         if ($sql->rowCount() > 0) {
             //entrar no sistema (sessao)
             $dado = $sql->fetch();
-            session_start();
             $_SESSION['id_usuario'] = $dado['id_usuario'];
             return true; //cadastrado com sucesso
         } else {
             return false;//nao foi possivel logar
         }
+    }
+
+    public function getNamelogin()
+    {
+        global $pdo;
+
+
+        $sql = $pdo->prepare("SELECT nome_usuario FROM usuario WHERE id_usuario = :id");
+        $sql->bindValue(":id", $_SESSION['id_usuario']);
+        $sql->execute();
+        //puxar nome pelo id logado
+        if ($sql->rowCount() > 0) {
+            $nameuser = $sql->fetch();
+        }
+        return $nameuser;
     }
 }

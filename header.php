@@ -15,9 +15,9 @@ require 'config.php';
 <body>
 
 
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-1">
-        <a class="navbar-brand" href="./">
+<?php if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])): ?>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="areaRestrita.php">
             <img src="assets/images/logo1.png" alt="FatCounter">
         </a>
 
@@ -26,23 +26,40 @@ require 'config.php';
         </button>
 
         <div class="collapse navbar-collapse " id="navbarSite">
-            <ul class="navbar-nav ml-auto">
-                <?php if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])): ?>
-                    <li class="nav-item">
-                        <a id="cabecalho-index" class="nav-link" href="#">Olá, nome</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="cabecalho-index" class="nav-link" href="sair.php">Sair</a>
-                    </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a id="cabecalho-index" class="nav-link" href="login.php">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="cabecalho-index" class="nav-link" href="register.php">Registrar-se</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
+            <nav class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a style="color: #000000" class="nav-link" href="perfil.php">Bem vindo(a)
+                        <?php
+                        require 'classes/Usuario.php';
+                        $u = new Usuario();
+                        $nameuser = $u->getNamelogin();
+                        echo $nameuser['nome_usuario']; ?>
+                    </a></li>
+                <li class="nav-item">
+                    <a style="color: #000000" class="nav-link" href="sair.php">Sair</a>
+                </li>
+            </nav>
+        <?php else: ?>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="./">
+                    <img src="assets/images/logo1.png" alt="FatCounter">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse " id="navbarSite">
+                    <nav class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a id="cabecalho-index" class="nav-link" href="login.php">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="cabecalho-index" class="nav-link" href="register.php">Registrar-se</a>
+                        </li>
+                    </nav>
+                    <?php endif; ?>
+                </div>
+            </nav>
         </div>
-    </nav>
-</div>

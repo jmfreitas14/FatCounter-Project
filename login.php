@@ -21,6 +21,7 @@ $u = new Usuario();
         </form>
     </div>
 </div>
+
 <div class="container">
     <a href="#" class="nav-link">Esqueceu-se da senha?</a>
     <div class="navbar justify-content-start">
@@ -28,6 +29,7 @@ $u = new Usuario();
         <a href="register.php" class="nav-link">Cadastre-se</a>
     </div>
 </div>
+
 <?php
 
 if (isset($_POST['email']) && !empty($_POST['email'])) {
