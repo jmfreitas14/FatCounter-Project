@@ -9,13 +9,13 @@ require_once 'menu-dentro.php';
       href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-awesome/css/font-awesome.min.css"/>
 <link rel="stylesheet" media="all"
       href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-awesome/css/font-awesome-ie7.min.css"/>
-<link rel="stylesheet" media="all" href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-mfizz/font-mfizz.css"/>
-<link rel="stylesheet" media="screen"
-      href="https://d34yn14tavczy0.cloudfront.net/assets/account/settings-7bcbcdcb441f29942a99e3cf010bc621600a1a2f5f93b65cd599eea05e727a3d.css"/>
+<link rel="stylesheet" media="all"
+      href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-mfizz/font-mfizz.css"/>
 
 <body class="layout-1" data-lang="pt" class=&quot;body-header&quot;>
 
 <style media="screen">
+    /* imported from simba main app. do not modify manually */
     .globalTopNav-2GCw3 {
         background: #f0f0f0;
         border-bottom: 1px solid #d2d2d2;
@@ -46,22 +46,31 @@ require_once 'menu-dentro.php';
 
     <div id="content">
 
-        <div id="main" class="anti-aliased">
-            <div id="settings">
-                <div class="flex">
-                    <div class="flex-1">
-                        <h1 class="setting-title">Configurações de conta</h1>
-                        <div class="itemWrapper">
-                            <ol>
-                                <li><a href="alterarsenha.php">Alterar senha</a></li>
-                                <li><a href="alteraremail.php">Alterar endereço de e-mail</a></li>
-                                <li><a href="editarperfil.php">Alterar nome de usuário</a></li>
-                                <li><a href="excluirconta.php">Excluir conta</a></li>
-                            </ol>
+        <div id="main">
+
+            <h1 class="main-title">Configurações de e-mail</h1>
+
+            <form>
+
+                <div class="block-1">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">
+                            Seu e-mail:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputPassword">
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <p class="cont-1">
+
+                    <input type="submit" class="button" value="Salvar alterações"/>
+
+                </p>
+
+            </form>
         </div>
     </div>
 </div>
+

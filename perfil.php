@@ -61,8 +61,8 @@ require_once 'menu-dentro.php';
                         <p class="cont-5">
 
                         <ul class="user_actions">
-                            <li><a class="button" href="#">Editar Perfil</a></li>
-                            <li><a class="button" href="#">Editar Fotos</a></li>
+                            <li><a class="button" href="editarperfil.php">Editar Perfil</a></li>
+                            <li><a class="button" href="editarfoto.php">Editar Fotos</a></li>
                         </ul>
                         </p>
                     </div>
