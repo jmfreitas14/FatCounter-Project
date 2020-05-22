@@ -110,7 +110,7 @@ require_once 'menu-dentro.php';
                 <option value="14">14</option>
                 <option value="15">15</option>
                 <option value="16">16</option>
-                <option value="17" selected="selected">17</option>
+                <option value="17">17</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>
@@ -131,7 +131,7 @@ require_once 'menu-dentro.php';
                 <option value="2">Fevereiro</option>
                 <option value="3">Março</option>
                 <option value="4">Abril</option>
-                <option value="5" selected="selected">Maio</option>
+                <option value="5">Maio</option>
                 <option value="6">Junho</option>
                 <option value="7">Julho</option>
                 <option value="8">Agosto</option>
@@ -141,7 +141,7 @@ require_once 'menu-dentro.php';
                 <option value="12">Dezembro</option>
             </select>
             <select id="measurement_entry_date_1i" name="measurement[entry_date(1i)]" class="select short">
-                <option value="2020" selected="selected">2020</option>
+                <option value="2020">2020</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>
                 <option value="2017">2017</option>

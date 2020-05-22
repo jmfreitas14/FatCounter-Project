@@ -112,7 +112,7 @@ require_once 'menu-dentro.php';
 
                     <td class="first alt" style="z-index: 10">
 
-                        <a href="#">Adicionar alimento</a>
+                        <a href="alimentos.php">Adicionar alimento</a>
                         <div class="quick_tools">
                             <div id="quick_tools_0" class="quick_tools_options hidden">
                             </div>
