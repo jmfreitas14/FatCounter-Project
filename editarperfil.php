@@ -2,6 +2,36 @@
 require_once 'header.php';
 require_once 'menu-dentro.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
+<?php
+
+if (isset($_POST['nome_usuario']) && !empty($_POST['nome_usuario'])) {
+    $nome = addslashes($_POST['nome_usuario']);
+
+
+    $a->editUsuario($nome, $_SESSION['id_usuario']);
+    ?>
+    <div class="flash">
+        Usuario editado com sucesso!
+    </div>
+    <?php
+}
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
+    $info = $a->getNamelogin($_SESSION['id_usuario']);
+} else {
+    ?>
+    <script type="text/javascript">window.location.href = "configuracoes.php";</script>
+    <?php
+    exit;
+}
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>
@@ -51,7 +81,7 @@ require_once 'menu-dentro.php';
 
             <h1 class="main-title">Alterar nome de usuário</h1>
 
-            <form>
+            <form method="post">
                 <div class="block-1">
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">
@@ -60,7 +90,7 @@ require_once 'menu-dentro.php';
 
                         <div class="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                   value="email@example.com">
+                                   value="<?php echo $info['nome_usuario']; ?>">
                         </div>
                     </div>
 
@@ -69,13 +99,13 @@ require_once 'menu-dentro.php';
                             Novo nome de usuário:
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword">
+                            <input type="text" class="form-control" name="nome_usuario" id="inputPassword" autofocus>
                         </div>
                     </div>
                 </div>
-                    <p class="cont-1">
-                        <input type="submit" class="button" value="Alterar nome de usuário"/>
-                    </p>
+                <p class="cont-1">
+                    <input type="submit" class="button" value="Alterar nome de usuário"/>
+                </p>
             </form>
         </div>
     </div>

@@ -2,6 +2,36 @@
 require_once 'header.php';
 require_once 'menu-dentro.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
+<?php
+
+if (isset($_POST['senha']) && !empty($_POST['senha'])) {
+    $senha = addslashes($_POST['senha']);
+
+
+    $a->editSenha($senha, $_SESSION['id_usuario']);
+    ?>
+    <div class="flash">
+        Senha editada com sucesso!
+    </div>
+    <?php
+}
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
+    $info = $a->getNamelogin($_SESSION['id_usuario']);
+} else {
+    ?>
+    <script type="text/javascript">window.location.href = "configuracoes.php";</script>
+    <?php
+    exit;
+}
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>
@@ -50,7 +80,7 @@ require_once 'menu-dentro.php';
 
             <h1 class="main-title">Alterar senha</h1>
 
-            <form>
+            <form method="post">
 
                 <div class="block-1">
 
@@ -59,7 +89,8 @@ require_once 'menu-dentro.php';
                             Senha atual:
                         </label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="password" readonly class="form-control-plaintext" id="inputPassword"
+                                   value="60ba1a407b078003b2a1f0cd9c99504f">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -67,7 +98,7 @@ require_once 'menu-dentro.php';
                             Nova senha:
                         </label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="password" name="senha" class="form-control" id="inputPassword" autofocus>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -75,7 +106,7 @@ require_once 'menu-dentro.php';
                             Confirmar senha:
                         </label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="password" name="senha" class="form-control" id="inputPassword">
                         </div>
                     </div>
                 </div>

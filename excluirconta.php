@@ -2,6 +2,23 @@
 require_once 'header.php';
 require_once 'menu-dentro.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
+<?php
+if (isset($_POST['id_usuario']) && !empty($_POST['id_usuario'])) {
+    $a->excluirConta($_POST['id_usuario']);
+}
+?>
+<script type="text/javascript">window.location.href = "index.php";</script>
+<?php
+exit;
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>
@@ -80,7 +97,7 @@ require_once 'menu-dentro.php';
                         </div>
 
                         <p class="confirm">Tem certeza que deseja excluir sua conta?</p>
-                        <form action="#" method="post">
+                        <form method="post">
                             <p class="buttons">
                                 <input type="submit" name="delete" value="Excluir minha conta"
                                        class="button delete-button"/>

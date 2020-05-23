@@ -15,7 +15,6 @@ require 'config.php';
 </head>
 <body>
 
-
 <?php if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])): ?>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="areaRestrita.php">
@@ -32,8 +31,8 @@ require 'config.php';
                     <a style="color: #000000" class="nav-link" href="perfil.php">Bem vindo(a)
                         <?php
                         require 'classes/Usuario.php';
-                        $u = new Usuario();
-                        $nameuser = $u->getNamelogin();
+                        $a = new Usuario();
+                        $nameuser = $a->getNamelogin();
                         echo $nameuser['nome_usuario']; ?>
                     </a></li>
                 <li class="nav-item">

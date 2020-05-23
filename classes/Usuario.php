@@ -46,7 +46,7 @@ class Usuario
         global $pdo;
 
 
-        $sql = $pdo->prepare("SELECT nome_usuario FROM usuario WHERE id_usuario = :id");
+        $sql = $pdo->prepare("SELECT nome_usuario, email, senha FROM usuario WHERE id_usuario = :id");
         $sql->bindValue(":id", $_SESSION['id_usuario']);
         $sql->execute();
         //puxar nome pelo id logado
@@ -54,5 +54,47 @@ class Usuario
             $nameuser = $sql->fetch();
         }
         return $nameuser;
+    }
+
+    public function editUsuario($nome, $id_usuario)
+    {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("update usuario set nome_usuario = :nome where id_usuario = :id");
+        $sql->bindValue(":nome", $nome);
+        $sql->bindValue(":id", $id_usuario);
+        $sql->execute();
+    }
+
+    public function editSenha($senha, $id_usuario)
+    {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("update usuario set senha= :senha where id_usuario = :id");
+        $sql->bindValue(":senha", md5($senha));
+        $sql->bindValue(":id", $id_usuario);
+        $sql->execute();
+    }
+
+    public function editEmail($email, $id_usuario)
+    {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("update usuario set email = :email where id_usuario = :id");
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":id", $id_usuario);
+        $sql->execute();
+    }
+
+    public function excluirConta($id_usuario)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("delete from usuario where id_usuario = :id");
+        $sql->bindValue(":id", $id_usuario);
+        $sql->execute();
     }
 }

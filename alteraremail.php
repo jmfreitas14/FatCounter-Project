@@ -2,6 +2,36 @@
 require_once 'header.php';
 require_once 'menu-dentro.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
+<?php
+
+if (isset($_POST['email']) && !empty($_POST['email'])) {
+    $email = addslashes($_POST['email']);
+
+
+    $a->editEmail($email, $_SESSION['id_usuario']);
+    ?>
+    <div class="flash">
+        Email editado com sucesso!
+    </div>
+    <?php
+}
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
+    $info = $a->getNameLogin($_SESSION['id_usuario']);
+} else {
+    ?>
+    <script type="text/javascript">window.location.href = "configuracoes.php";</script>
+    <?php
+    exit;
+}
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>
@@ -50,7 +80,7 @@ require_once 'menu-dentro.php';
 
             <h1 class="main-title">Configurações de e-mail</h1>
 
-            <form>
+            <form method="post">
 
                 <div class="block-1">
                     <div class="form-group row">
@@ -58,16 +88,26 @@ require_once 'menu-dentro.php';
                             Seu e-mail:
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword">
+                            <input type="text" readonly class="form-control-plaintext" id="inputPassword"
+                                   value="<?php echo $info['email']; ?>">
                         </div>
                     </div>
-                </div>
+                    <div class="block-1">
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">
+                                Novo e-mail:
+                            </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="email" autofocus>
+                            </div>
+                        </div>
+                    </div>
 
-                <p class="cont-1">
+                    <p class="cont-1">
 
-                    <input type="submit" class="button" value="Salvar alterações"/>
+                        <input type="submit" class="button" value="Salvar alterações"/>
 
-                </p>
+                    </p>
 
             </form>
         </div>
