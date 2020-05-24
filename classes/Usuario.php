@@ -89,7 +89,7 @@ class Usuario
         $sql->execute();
     }
 
-    public function excluirConta($id_usuario)
+    public function excluirConta($excluir, $id_usuario)
     {
         global $pdo;
 

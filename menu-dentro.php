@@ -1,6 +1,14 @@
 <?php
 require_once 'header.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/application-e114c1bd8d8826f0b79675f360bd821ba291aca3b900a14a0cbfce77d4a8c5f2.css"/>

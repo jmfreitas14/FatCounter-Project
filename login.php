@@ -43,7 +43,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
     } else {
         ?>
         <div class="container alert alert-danger">
-            Usuario e/ou senha incorretos!<a href="cadastre.php" class="alert alert-link">Cadastre-se</a>
+            Usuario e/ou senha incorretos!<a href="register.php" class="alert alert-link">Cadastre-se</a>
         </div>
         <?php
     }

@@ -2,6 +2,14 @@
 require_once 'header.php';
 require_once 'menu-dentro.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
 
 <head>
 
@@ -89,7 +97,7 @@ require_once 'menu-dentro.php';
             <td>
                 <div class="float-left" style="padding: 7px;">Metas diárias de nutrição</div>
                 <div class="float-right">
-                    <a href="#">
+                    <a href="calc.php">
                         <button type="submit" class="btn btn-success btn-sm">
                             Editar
                         </button>

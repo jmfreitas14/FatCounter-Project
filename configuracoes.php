@@ -2,6 +2,14 @@
 require_once 'header.php';
 require_once 'menu-dentro.php';
 ?>
+<?php
+if (empty($_SESSION['id_usuario'])) {
+    ?>
+    <script type="text/javascript">window.location.href = "login.php";</script>
+    <?php
+    exit;
+}
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>

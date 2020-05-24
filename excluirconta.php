@@ -11,13 +11,13 @@ if (empty($_SESSION['id_usuario'])) {
 }
 ?>
 <?php
-if (isset($_POST['id_usuario']) && !empty($_POST['id_usuario'])) {
-    $a->excluirConta($_POST['id_usuario']);
+if (isset($_POST['delete']) && !empty($_POST['delete'])) {
+    $excluir = addslashes($_POST['delete']);
+
+
+    $a->excluirConta($excluir, $_SESSION['id_usuario']);
+    header("location: sair.php");
 }
-?>
-<script type="text/javascript">window.location.href = "index.php";</script>
-<?php
-exit;
 ?>
 
 <link rel="stylesheet" media="screen"
