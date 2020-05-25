@@ -60,9 +60,12 @@ if (empty($_SESSION['id_usuario'])) {
 
             <div class="container px-lg-3">
                 <div class="row mx-lg-n3">
-                    <div class="col py-3 px-lg-5"><p class="img-container">
-                            <img src="#" alt="No photo"/>
-                        </p></div>
+                    <div class="col user-info">
+                        <div class="ember-view profile-photo">
+                            <div class="no-image">
+                            </div>
+                        </div>
+                    </div>
                     <div class="col py-3 px-lg-5">
                         <h3 class="main-title-2">joao_miguel14</h3>
 

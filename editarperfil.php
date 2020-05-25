@@ -15,19 +15,28 @@ if (empty($_SESSION['id_usuario'])) {
 if (isset($_POST['nome_usuario']) && !empty($_POST['nome_usuario'])) {
     $nome = addslashes($_POST['nome_usuario']);
 
+    if ($_POST['atual'] == $_POST['nome_usuario']) {
+        ?>
+        <div class="flash">
+            Usuario igual ao anterior!
+        </div>
+        <?php
+    } elseif ($_POST['atual'] != $_POST['nome_usuario']) {
 
-    $a->editUsuario($nome, $_SESSION['id_usuario']);
-    ?>
-    <div class="flash">
-        Usuario editado com sucesso!
-    </div>
-    <?php
+        $a->editUsuario($nome, $_SESSION['id_usuario']);
+        ?>
+        <div class="flash">
+            Usuario editado com sucesso!
+        </div>
+        <?php
+        header('Refresh:0');
+    }
 }
 if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
     $info = $a->getNamelogin($_SESSION['id_usuario']);
 } else {
     ?>
-    <script type="text/javascript">window.location.href = "configuracoes.php";</script>
+    <script type="text/javascript">window.location.href = "login.php";</script>
     <?php
     exit;
 }
@@ -89,7 +98,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
                         </label>
 
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                            <input type="text" readonly class="form-control-plaintext" name="atual" id="staticEmail"
                                    value="<?php echo $info['nome_usuario']; ?>">
                         </div>
                     </div>

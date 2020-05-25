@@ -15,13 +15,21 @@ if (empty($_SESSION['id_usuario'])) {
 if (isset($_POST['email']) && !empty($_POST['email'])) {
     $email = addslashes($_POST['email']);
 
+    if ($_POST['atual'] == $_POST['email']) {
+        ?>
+        <div class="flash">
+            E-mail igual ao anterior!
+        </div>
+        <?php
+    } elseif ($_POST['email'] != $_POST['atual']) {
 
-    $a->editEmail($email, $_SESSION['id_usuario']);
-    ?>
-    <div class="flash">
-        Email editado com sucesso!
-    </div>
-    <?php
+        $a->editEmail($email, $_SESSION['id_usuario']);
+        ?>
+        <div class="flash">
+            E-mail editado com sucesso!
+        </div>
+        <?php
+    }
 }
 if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
     $info = $a->getNameLogin($_SESSION['id_usuario']);
@@ -88,7 +96,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
                             Seu e-mail:
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="inputPassword"
+                            <input type="text" readonly class="form-control-plaintext" name="atual" id="inputPassword"
                                    value="<?php echo $info['email']; ?>">
                         </div>
                     </div>

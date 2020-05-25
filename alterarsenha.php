@@ -15,13 +15,21 @@ if (empty($_SESSION['id_usuario'])) {
 if (isset($_POST['senha']) && !empty($_POST['senha'])) {
     $senha = addslashes($_POST['senha']);
 
+    if ($_POST['senha'] != $_POST['confsenha']) {
+        ?>
+        <div class="flash">
+            Novas senhas não coincidem!
+        </div>
+        <?php
+    } elseif ($_POST['senha'] == $_POST['confsenha']) {
 
-    $a->editSenha($senha, $_SESSION['id_usuario']);
-    ?>
-    <div class="flash">
-        Senha editada com sucesso!
-    </div>
-    <?php
+        $a->editSenha($senha, $_SESSION['id_usuario']);
+        ?>
+        <div class="flash">
+            Senha editada com sucesso!
+        </div>
+        <?php
+    }
 }
 if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
     $info = $a->getNamelogin($_SESSION['id_usuario']);
@@ -89,8 +97,9 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
                             Senha atual:
                         </label>
                         <div class="col-sm-10">
-                            <input type="password" readonly class="form-control-plaintext" id="inputPassword"
-                                   value="60ba1a407b078003b2a1f0cd9c99504f">
+                            <input type="password" readonly class="form-control-plaintext" name="atual"
+                                   id="inputPassword"
+                                   value="<?php echo $info['senha']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -106,7 +115,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
                             Confirmar senha:
                         </label>
                         <div class="col-sm-10">
-                            <input type="password" name="senha" class="form-control" id="inputPassword">
+                            <input type="password" name="confsenha" class="form-control" id="inputPassword">
                         </div>
                     </div>
                 </div>

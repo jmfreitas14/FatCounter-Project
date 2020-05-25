@@ -44,6 +44,7 @@ class Usuario
     public function getNamelogin()
     {
         global $pdo;
+        $array = array();
 
 
         $sql = $pdo->prepare("SELECT nome_usuario, email, senha FROM usuario WHERE id_usuario = :id");
@@ -54,6 +55,20 @@ class Usuario
             $nameuser = $sql->fetch();
         }
         return $nameuser;
+    }
+
+    public function getFoto($id)
+    {
+        $array = array();
+        global $pdo;
+
+            $sql = $pdo->prepare("select id, url from usuario_imagens where id_usuario = :id_usuario");
+            $sql->bindValue(":id_usuario", $id);
+            $sql->execute();
+
+            if ($sql->rowCount() > 0) {
+                $array['fotos'] = $sql->fetch();
+            }
     }
 
     public function editUsuario($nome, $id_usuario)
@@ -96,5 +111,45 @@ class Usuario
         $sql = $pdo->prepare("delete from usuario where id_usuario = :id");
         $sql->bindValue(":id", $id_usuario);
         $sql->execute();
+    }
+
+    public function inserirFoto($fotos)
+    {
+        global $pdo;
+
+        if (count($fotos) > 0) {
+            for ($q = 0; $q < count($fotos['tmp_name']); $q++) {
+                $tipo = $fotos ['type'][$q];
+                if (in_array($tipo, array('image/jpeg', 'image/png'))) {
+                    $tmpname = md5(time() . rand(0, 9999)) . '.jpg';
+                    move_uploaded_file($fotos['tmp_name'][$q], 'assets/images/perfis/' . $tmpname);
+                    list($width_orig, $height_orig) = getimagesize('assets/images/perfis/' . $tmpname);
+                    $ratio = $width_orig / $height_orig;
+
+                    $width = 500;
+                    $height = 500;
+
+                    if ($width / $height > $ratio) {
+                        $width = $height * $ratio;
+                    } else {
+                        $height = $width * $ratio;
+                    }
+
+                    $img = imagecreatetruecolor($width, $height);
+                    if ($tipo == 'image/jpeg') {
+                        $origi = imagecreatefromjpeg('assets/images/perfis/' . $tmpname);
+                    } elseif ($tipo == 'image/png') {
+                        $origi = imagecreatefrompng('assets/images/perfis/' . $tmpname);
+                    }
+                    imagecopyresampled($img, $origi, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
+                    imagejpeg($img, 'assets/images/perfis/' . $tmpname, 80);
+
+                    $sql = $pdo->prepare("insert into usuario_imagens set id_usuario = :id_usuario, url = :url");
+                    $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
+                    $sql->bindValue(":url", $tmpname);
+                    $sql->execute();
+                }
+            }
+        }
     }
 }

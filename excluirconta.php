@@ -80,18 +80,13 @@ if (isset($_POST['delete']) && !empty($_POST['delete'])) {
                             </div>
                             <div class="panel-body">
                                 <p>
-                                    Estou ciente de que isso irá excluir permanentemente minha conta MyFitnessPal, que
+                                    Estou ciente de que isso irá excluir permanentemente minha conta FatCounter, que
                                     minhas informações não poderão ser recuperadas e que esta ação não pode ser
                                     desfeita.
                                 </p>
                                 <p>
                                     Estou ciente de que perderei permanentemente o acesso a todos os dados associados ao
-                                    meu perfil, incluindo dados inseridos de alimentos, exercícios, passos, peso, notas,
-                                    postagens do feed de notícias e fotos.
-                                </p>
-                                <p>
-                                    Estou ciente de que somente minha conta do MyFitnessPal será excluída e esta ação
-                                    não afetará qualquer outra conta Under Armour que eu possa ter.
+                                    meu perfil, incluindo dados inseridos de alimentos e peso.
                                 </p>
                             </div>
                         </div>
