@@ -20,12 +20,9 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
     $carbo = addslashes($_POST['carbo']);
     $gord = addslashes($_POST['gordura']);
 
-    $me->adicionar($kcl, $prot, $carbo, $gord);
-
+    $me->atualizar($kcl, $prot, $carbo, $gord);
+    header('Location: metas.php');
     ?>
-    <div class="flash">
-        Metas salva com sucesso!
-    </div>
     <?php
 
 }
@@ -116,7 +113,7 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="kcl" id="measurement_display_value" readonly class="text short"
+                        <input type="text" name="kcl" id="measurement_display_value" class="text short"
                                data-unit-system="kg" value="<?php echo $info['caloria']; ?>"/>
                     </span>
                     <span>
@@ -133,7 +130,7 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="carbo" id="measurement_display_value" readonly class="text short"
+                        <input type="text" name="carbo" id="measurement_display_value" class="text short"
                                data-unit-system="kg" value="<?php echo $info['carboidrato']; ?>"/>
                     </span>
                     <span>
@@ -150,7 +147,7 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="proteina" id="measurement_display_value" readonly class="text short"
+                        <input type="text" name="proteina" id="measurement_display_value" class="text short"
                                data-unit-system="kg" value="<?php echo $info['proteina']; ?>"/>
                     </span>
                     <span>
@@ -167,7 +164,7 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="gordura" id="measurement_display_value" readonly class="text short"
+                        <input type="text" name="gordura" id="measurement_display_value" class="text short"
                                data-unit-system="kg" value="<?php echo $info['gordura']; ?>"/>
                     </span>
                     <span>
@@ -177,8 +174,7 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
             </div>
         <?php endforeach; ?>
         <br>
-        <a class="button" href="editarmetas.php">Editar</a>
-        <a class="button" href="adicionarmetas.php">Adicionar metas</a>
+        <input type="submit" class="button" value="Salvar alterações"/>
     </form>
 </div>
 </body>

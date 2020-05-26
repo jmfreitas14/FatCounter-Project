@@ -97,7 +97,7 @@ if (isset($_POST['delete']) && !empty($_POST['delete'])) {
                                 <input type="submit" name="delete" value="Excluir minha conta"
                                        class="button delete-button"/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="configuracoes.php">
+                                <a href="areaRestrita.php">
                                     <input type="button" role="button" name="cancel" value="Cancelar"
                                            class="button style-2"/>
                                 </a>

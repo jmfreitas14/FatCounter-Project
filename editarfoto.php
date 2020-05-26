@@ -70,5 +70,5 @@ $a->inserirFoto($fotos);
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="submit" value="Salvar" class="btn btn-default">
+                                                <input type="submit" class="button  add-new-entry" value="Enviar Foto"/>
                 </form>

@@ -83,38 +83,33 @@ if (empty($_SESSION['id_usuario'])) {
                                         </div>
                                         <div class="col summary-info">
                                             <div class="energy-breakdown">
-                                                <span class="remaining">Calorias restantes</span>
+                                                <span class="remaining">Meta</span>
 
                                                 <div class="energy-remaining-component">
                                                     <div class="energy-remaining">
                                                         <div class="energy-remaining-details">
                                                             <div class="energy-remaining-number ">
                                                                 <div class="spinner">
-                                                                    <div class="rect1"></div>
-                                                                    <div class="rect2"></div>
-                                                                    <div class="rect3"></div>
-                                                                    <div class="rect4"></div>
-                                                                    <div class="rect5"></div>
+                                                                    <?php
+                                                                    require 'classes/Metas.php';
+                                                                    $me = new Metas();
+
+                                                                    $infos = $me->getMetas();
+                                                                    foreach ($infos
+
+                                                                             as $info):
+                                                                        ?>
+
+                                                                        <p style="font-size: 40px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #85c400;"><?php echo $info['caloria']; ?></p>
+
+                                                                    <?php endforeach; ?>
                                                                 </div>
                                                             </div>
-
                                                             <div class="add-buttons">
                                                                 <a class="gray button desc"
                                                                    href="adicionaralimento.php">
                                                                     Adicionar alimento
                                                                 </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="energy-calculation">
-                                                        <div class="equation">
-                                                        </div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar-container">
-                                                                <div class="progress-bar-background">
-                                                                </div>
-                                                                <div class="progress-bar-progress">
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -127,3 +122,4 @@ if (empty($_SESSION['id_usuario'])) {
                                 </div>
                             </div>
                         </div>
+                    </div>

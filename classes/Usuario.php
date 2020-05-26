@@ -57,18 +57,19 @@ class Usuario
         return $nameuser;
     }
 
-    public function getFoto($id)
+    public function getFoto()
     {
         $array = array();
         global $pdo;
 
-            $sql = $pdo->prepare("select id, url from usuario_imagens where id_usuario = :id_usuario");
-            $sql->bindValue(":id_usuario", $id);
+            $sql = $pdo->prepare("select * from usuario_imagens where id_usuario = :id_usuario");
+            $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
             $sql->execute();
 
             if ($sql->rowCount() > 0) {
-                $array['fotos'] = $sql->fetch();
+                $array['fotos'] = $sql->fetchAll();
             }
+        return $array;
     }
 
     public function editUsuario($nome, $id_usuario)
@@ -126,8 +127,8 @@ class Usuario
                     list($width_orig, $height_orig) = getimagesize('assets/images/perfis/' . $tmpname);
                     $ratio = $width_orig / $height_orig;
 
-                    $width = 500;
-                    $height = 500;
+                    $width = 275;
+                    $height = 275;
 
                     if ($width / $height > $ratio) {
                         $width = $height * $ratio;

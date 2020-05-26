@@ -105,14 +105,6 @@ if (empty($_SESSION['id_usuario'])) {
                         Proteínas
                         <div class="subtitle">g</div>
                     </td>
-                    <td class="alt nutrient-column">
-                        Sódio
-                        <div class="subtitle">mg</div>
-                    </td>
-                    <td class="alt nutrient-column">
-                        Açúcar
-                        <div class="subtitle">g</div>
-                    </td>
                 </tr>
 
 
@@ -126,7 +118,7 @@ if (empty($_SESSION['id_usuario'])) {
                             </div>
                         </div>
                 <tr class="spacer">
-                    <td class="first" colspan="6">&nbsp;</td>
+                    <td class="first" colspan="5">&nbsp;</td>
                     <td class="empty">&nbsp;</td>
                 </tr>
 
@@ -158,44 +150,39 @@ if (empty($_SESSION['id_usuario'])) {
               </span>
                     </td>
 
-                    <td>0</td>
-
-                    <td>0</td>
-
                     <td class="empty"></td>
 
                 </tr>
 
                 <tr class="total alt">
+                    <?php
+                    require 'classes/Metas.php';
+                    $me = new Metas();
+
+                    $infos = $me->getMetas();
+                    foreach ($infos
+
+                    as $info):
+                    ?>
 
                     <td class="first">Sua meta diária</td>
 
+                    <td><?php echo $info['caloria']; ?></td>
 
-                    <td>2.030</td>
                     <td>
-                        <span class="macro-value">254</span>
-                        <span class="macro-percentage">
-                  50
-                </span>
+                        <span class="macro-value"><?php echo $info['carboidrato']; ?></span>
                     </td>
                     <td>
-                        <span class="macro-value">68</span>
-                        <span class="macro-percentage">
-                  30
-                </span>
+                        <span class="macro-value"><?php echo $info['gordura']; ?></span>
                     </td>
                     <td>
-                        <span class="macro-value">102</span>
-                        <span class="macro-percentage">
-                  20
-                </span>
+                        <span class="macro-value"><?php echo $info['proteina']; ?></span>
                     </td>
-                    <td>2.300</td>
-                    <td>76</td>
+
                     <td class="empty"></td>
 
                 </tr>
-
+                <?php endforeach; ?>
                 <tr class="total remaining">
 
                     <td class="first">Restantes</td>
@@ -220,8 +207,6 @@ if (empty($_SESSION['id_usuario'])) {
                   20
                 </span>
                     </td>
-                    <td class="positive">2.300</td>
-                    <td class="positive">76</td>
                     <td class="empty"></td>
 
                 </tr>
@@ -250,14 +235,6 @@ if (empty($_SESSION['id_usuario'])) {
                         Proteínas
                         <div class="subtitle">g</div>
                     </td>
-                    <td class="alt nutrient-column">
-                        Sódio
-                        <div class="subtitle">mg</div>
-                    </td>
-                    <td class="alt nutrient-column">
-                        Açúcar
-                        <div class="subtitle">g</div>
-                    </td>
                     <td class="empty"></td>
 
                 </tr>
@@ -265,13 +242,12 @@ if (empty($_SESSION['id_usuario'])) {
             </table>
         </div>
 
-
         <div id="complete_day">
-    <span class="day_incomplete_message">
-  Quando você terminar de registrar todos os alimentos e exercícios para este dia, clique aqui: <br><br><a
-                class="button complete-this-day-button" href="#">Concluir este registro</a>
-</span>
-
+            <span class="day_incomplete_message">
+          Quando você terminar de registrar todos os alimentos e exercícios para este dia, clique aqui:
+                <br><br>
+                <a class="button complete-this-day-button" href="#">Concluir este registro</a>
+            </span>
         </div>
     </div>
 </div>

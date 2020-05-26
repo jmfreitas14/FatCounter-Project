@@ -21,11 +21,9 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
     $gord = addslashes($_POST['gordura']);
 
     $me->adicionar($kcl, $prot, $carbo, $gord);
+    header('Location: metas.php');
 
     ?>
-    <div class="flash">
-        Metas salva com sucesso!
-    </div>
     <?php
 
 }
@@ -104,10 +102,6 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
         </div>
     </div>
     <form method="post">
-        <?php
-        $infos = $me->getMetas();
-        foreach ($infos as $info):
-            ?>
             <div class="row">
                 <div class="col left">
         <span class="energy-measurement">
@@ -116,8 +110,8 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="kcl" id="measurement_display_value" readonly class="text short"
-                               data-unit-system="kg" value="<?php echo $info['caloria']; ?>"/>
+                        <input type="text" name="kcl" id="measurement_display_value" class="text short"
+                               data-unit-system="kg"/>
                     </span>
                     <span>
                         <label class="measurement_label unit_label" for="measurement_display_value">Kcl</label>
@@ -133,8 +127,8 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="carbo" id="measurement_display_value" readonly class="text short"
-                               data-unit-system="kg" value="<?php echo $info['carboidrato']; ?>"/>
+                        <input type="text" name="carbo" id="measurement_display_value" class="text short"
+                               data-unit-system="kg"/>
                     </span>
                     <span>
                         <label class="measurement_label unit_label" for="measurement_display_value">g</label>
@@ -150,8 +144,8 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="proteina" id="measurement_display_value" readonly class="text short"
-                               data-unit-system="kg" value="<?php echo $info['proteina']; ?>"/>
+                        <input type="text" name="proteina" id="measurement_display_value" class="text short"
+                               data-unit-system="kg" />
                     </span>
                     <span>
                         <label class="measurement_label unit_label" for="measurement_display_value">g</label>
@@ -167,18 +161,16 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
                 </div>
                 <div class="col right">
                     <span>
-                        <input type="text" name="gordura" id="measurement_display_value" readonly class="text short"
-                               data-unit-system="kg" value="<?php echo $info['gordura']; ?>"/>
+                        <input type="text" name="gordura" id="measurement_display_value" class="text short"
+                               data-unit-system="kg"/>
                     </span>
                     <span>
                         <label class="measurement_label unit_label" for="measurement_display_value">g</label>
                     </span>
                 </div>
             </div>
-        <?php endforeach; ?>
         <br>
-        <a class="button" href="editarmetas.php">Editar</a>
-        <a class="button" href="adicionarmetas.php">Adicionar metas</a>
+        <input type="submit" class="button" value="Adicionar"/>
     </form>
 </div>
 </body>

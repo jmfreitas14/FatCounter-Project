@@ -56,24 +56,22 @@ if (empty($_SESSION['id_usuario'])) {
         <div id="main">
 
             <h2 class="main-title">Meu perfil</h2>
-
-
             <div class="container px-lg-3">
                 <div class="row mx-lg-n3">
                     <div class="col user-info">
-                        <div class="ember-view profile-photo">
-                            <div class="no-image">
-                            </div>
-                        </div>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #0f73ab;">
+                            <?php echo $nameuser['nome_usuario']; ?></p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;">Idade</p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;">Sexo</p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;">Cidade - UF</p>
                     </div>
                     <div class="col py-3 px-lg-5">
-                        <h3 class="main-title-2">joao_miguel14</h3>
 
                         <p class="cont-5">
 
                         <ul class="user_actions">
-                            <li><a class="button" href="editarperfil.php">Editar Perfil</a></li>
-                            <li><a class="button" href="editarfoto.php">Editar Fotos</a></li>
+                            <li><a class="button" href="editar-dados.php">Editar Perfil</a></li>
+                            <li><a class="button" href="excluirconta.php">Excluir conta</a></li>
                         </ul>
                         </p>
                     </div>
