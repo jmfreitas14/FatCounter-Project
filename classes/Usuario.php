@@ -47,7 +47,7 @@ class Usuario
         $array = array();
 
 
-        $sql = $pdo->prepare("SELECT nome_usuario, email, senha FROM usuario WHERE id_usuario = :id");
+        $sql = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario = :id");
         $sql->bindValue(":id", $_SESSION['id_usuario']);
         $sql->execute();
         //puxar nome pelo id logado
@@ -59,16 +59,26 @@ class Usuario
 
     public function getFoto()
     {
-        $array = array();
         global $pdo;
 
             $sql = $pdo->prepare("select * from usuario_imagens where id_usuario = :id_usuario");
             $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
             $sql->execute();
 
-            if ($sql->rowCount() > 0) {
-                $array['fotos'] = $sql->fetchAll();
-            }
+    }
+
+    public function getMinhasFotos()
+    {
+        global $pdo;
+
+        $array = array();
+        $sql = $pdo->prepare("SELECT * FROM usuario_imagens where id_usuario = :id_usuario");
+        $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
         return $array;
     }
 
@@ -114,9 +124,17 @@ class Usuario
         $sql->execute();
     }
 
-    public function inserirFoto($fotos)
+    public function inserirFoto($idade, $sexo, $cid, $uf, $fotos)
     {
         global $pdo;
+
+        $sql = $pdo->prepare("update usuario set idade = :i, sexo = :s, cidade = :cid, uf = :uf where id_usuario = :id");
+        $sql->bindValue(":i", $idade);
+        $sql->bindValue(":s", $sexo);
+        $sql->bindValue(":cid", $cid);
+        $sql->bindValue(":uf", $uf);
+        $sql->bindValue(":id", $_SESSION['id_usuario']);
+        $sql->execute();
 
         if (count($fotos) > 0) {
             for ($q = 0; $q < count($fotos['tmp_name']); $q++) {
@@ -127,8 +145,8 @@ class Usuario
                     list($width_orig, $height_orig) = getimagesize('assets/images/perfis/' . $tmpname);
                     $ratio = $width_orig / $height_orig;
 
-                    $width = 275;
-                    $height = 275;
+                    $width = 120;
+                    $height = 120;
 
                     if ($width / $height > $ratio) {
                         $width = $height * $ratio;
@@ -144,6 +162,7 @@ class Usuario
                     }
                     imagecopyresampled($img, $origi, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
                     imagejpeg($img, 'assets/images/perfis/' . $tmpname, 80);
+
 
                     $sql = $pdo->prepare("insert into usuario_imagens set id_usuario = :id_usuario, url = :url");
                     $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);

@@ -10,6 +10,28 @@ if (empty($_SESSION['id_usuario'])) {
     exit;
 }
 ?>
+<?php
+if (isset($_POST['idade']) && !empty($_POST['idade'])) {
+    $idade = addslashes($_POST['idade']);
+    $sexo = addslashes($_POST['sexo']);
+    $cid = addslashes($_POST['cid']);
+    $uf = addslashes($_POST['uf']);
+
+    if (isset($_FILES['fotos'])) {
+        $fotos = $_FILES['fotos'];
+    } else {
+        $fotos = array();
+    }
+
+    $a->inserirFoto($idade, $sexo, $cid, $uf, $fotos);
+    ?>
+    <div class="flash">
+        Perfil editado com sucesso!
+    </div>
+    <?php
+}
+?>
+
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>
@@ -59,14 +81,15 @@ if (empty($_SESSION['id_usuario'])) {
 
             <h1 class="main-title">Meu Perfil</h1>
 
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="block-1">
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">
                             Idade
                         </label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="idade" id="inputPassword" placeholder="Quantos anos?" autofocus>
+                            <input type="number" class="form-control" name="idade" id="inputPassword"
+                                   placeholder="Quantos anos?" autofocus>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -74,7 +97,8 @@ if (empty($_SESSION['id_usuario'])) {
                             Sexo
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="sexo" id="inputPassword" placeholder="Qual sexo?">
+                            <input type="text" class="form-control" name="sexo" id="inputPassword"
+                                   placeholder="Qual sexo?">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -82,7 +106,8 @@ if (empty($_SESSION['id_usuario'])) {
                             Cidade
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="cid" id="inputPassword" placeholder="Qual a cidade?">
+                            <input type="text" class="form-control" name="cid" id="inputPassword"
+                                   placeholder="Qual a cidade?">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -90,11 +115,22 @@ if (empty($_SESSION['id_usuario'])) {
                             UF
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" maxlength="2" class="form-control" name="uf" id="inputPassword" placeholder="Qual o estado?">
-                            <p style="font-size: 7pt; font-family: Arial, Helvetica, sans-serif;">Duas Letras somente.</p>
+                            <input type="text" maxlength="2" class="form-control" name="uf" id="inputPassword"
+                                   placeholder="Qual o estado?">
+                            <p style="font-size: 7pt; font-family: Arial, Helvetica, sans-serif;">Duas Letras
+                                somente.</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <h1 class="main-title">Foto de Perfil</h1>
+
+                    <div class="form-group">
+                        <input type="file" name="fotos[]"><br>
+                    </div>
+                </div>
+
                 <p class="cont-1">
                     <input type="submit" class="button" value="Salvar alterações"/>
                 </p>

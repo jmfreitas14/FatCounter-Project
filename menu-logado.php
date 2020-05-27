@@ -75,16 +75,30 @@ if (empty($_SESSION['id_usuario'])) {
                             <div class="body">
                                 <div class="contents">
                                     <div class="home-screen-macros">
-                                        <div class="col user-info">
-                                            <div class="ember-view profile-photo">
-                                                <div class="no-image">
+                                        <?php
+                                        $fotos = $a->getMinhasFotos();
+                                        foreach ($fotos as $foto):
+                                            ?>
+                                            <div class="col user-info">
+                                                <div class="ember-view profile-photo">
+                                                    <div class="no-image">
+                                                        <?php
+                                                        if (!isset($foto['url'])):
+                                                            ?>
+                                                            <img src="assets/images/perfis/default.jpg" width="120"
+                                                                 height="120">
+                                                        <?php else: ?>
+                                                            <img src="assets/images/perfis/<?php echo $foto['url']; ?>"
+                                                                 class="img-thumbnail"
+                                                                 border="0">
+                                                        <?php endif; ?>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <?php endforeach; ?>
                                         <div class="col summary-info">
                                             <div class="energy-breakdown">
                                                 <span class="remaining">Meta</span>
-
                                                 <div class="energy-remaining-component">
                                                     <div class="energy-remaining">
                                                         <div class="energy-remaining-details">
@@ -115,7 +129,9 @@ if (empty($_SESSION['id_usuario'])) {
                                                     </div>
                                                 </div>
                                                 <div class="bottom-spacer">
+                                                    <hr>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>

@@ -107,19 +107,53 @@ if (empty($_SESSION['id_usuario'])) {
                     </td>
                 </tr>
 
+                <tr>
+
+                    <td class="first alt">
+                        <a class="js-show-edit-food" data-food-entry-id="8166468160" data-locale="pt" href="#">
+                            arroz roa - Arroz, 50 gr
+                        </a>
+                    </td>
+
+
+                    <td>180</td>
+
+                    <td>
+                        <span class="macro-value">43</span>
+                    </td>
+
+                    <td>
+                        <span class="macro-value">123</span>
+                    </td>
+
+                    <td>
+                        <span class="macro-value">125</span>
+                    </td>
+                </tr>
 
                 <tr class="bottom">
 
                     <td class="first alt" style="z-index: 10">
 
-                        <a href="alimentos.php">Adicionar alimento</a>
+                        <a href="adicionaralimento2.php">Adicionar alimento</a>
                         <div class="quick_tools">
                             <div id="quick_tools_0" class="quick_tools_options hidden">
                             </div>
                         </div>
-                <tr class="spacer">
-                    <td class="first" colspan="5">&nbsp;</td>
-                    <td class="empty">&nbsp;</td>
+                    <td>180</td>
+
+                    <td>
+                        <span class="macro-value">43</span>
+                    </td>
+
+                    <td>
+                        <span class="macro-value">0</span>
+                    </td>
+
+                    <td>
+                        <span class="macro-value">3</span>
+                    </td>
+
                 </tr>
 
                 <tr class="total">
@@ -128,20 +162,6 @@ if (empty($_SESSION['id_usuario'])) {
 
 
                     <td>0</td>
-
-                    <td>
-                        <span class="macro-value">0</span>
-                        <span class="macro-percentage">
-                -
-              </span>
-                    </td>
-
-                    <td>
-                        <span class="macro-value">0</span>
-                        <span class="macro-percentage">
-                -
-              </span>
-                    </td>
 
                     <td>
                         <span class="macro-value">0</span>

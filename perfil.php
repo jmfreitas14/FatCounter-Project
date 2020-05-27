@@ -61,10 +61,27 @@ if (empty($_SESSION['id_usuario'])) {
                     <div class="col user-info">
                         <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #0f73ab;">
                             <?php echo $nameuser['nome_usuario']; ?></p>
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;">Idade</p>
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;">Sexo</p>
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;">Cidade - UF</p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;"><?php echo $nameuser['idade']; ?></p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;"><?php echo $nameuser['sexo']; ?></p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;"><?php echo $nameuser['cidade']; ?>
+                            - <?php echo $nameuser['uf']; ?></p>
                     </div>
+                    <?php
+                    $fotos = $a->getMinhasFotos();
+                    foreach ($fotos as $foto):
+                        ?>
+                        <div class="ember-view profile-photo">
+                            <?php
+                            if (empty($foto['url'])):
+                                ?>
+                                <img src="assets/images/perfis/default.jpg" class="img-thumbnail" border="0"
+                                     width="125px" height="125px">
+                            <?php else: ?>
+                                <img src="assets/images/perfis/<?php echo $foto['url']; ?>" class="img-thumbnail"
+                                     border="0">
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
                     <div class="col py-3 px-lg-5">
 
                         <p class="cont-5">
