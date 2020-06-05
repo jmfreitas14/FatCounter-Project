@@ -14,10 +14,10 @@ class Medida
 
     public function getPeso()
     {
+        $array = array();
         global $pdo;
 
-        $array = array();
-        $sql = $pdo->prepare("SELECT * FROM medidas where id_usuario = (select id_usuario from usuario where id_usuario = :id) order by idata desc");
+        $sql = $pdo->prepare("SELECT * FROM medidas where id_usuario = (select id_usuario from usuario where id_usuario = :id) order by idata desc limit 10");
         $sql->bindValue(":id", $_SESSION['id_usuario']);
         $sql->execute();
 

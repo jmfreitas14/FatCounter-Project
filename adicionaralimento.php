@@ -156,6 +156,7 @@ if (empty($_SESSION['id_usuario'])) {
 
                 </tr>
 
+
                 <tr class="total">
 
                     <td class="first">Totais</td>
@@ -165,9 +166,14 @@ if (empty($_SESSION['id_usuario'])) {
 
                     <td>
                         <span class="macro-value">0</span>
-                        <span class="macro-percentage">
-                -
-              </span>
+                    </td>
+
+                    <td>
+                        <span class="macro-value">0</span>
+                    </td>
+
+                    <td>
+                        <span class="macro-value">0</span>
                     </td>
 
                     <td class="empty"></td>

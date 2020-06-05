@@ -60,6 +60,31 @@ if (isset($_POST['data']) && !empty($_POST['data'])) {
 
     <div id="content">
 
+        <h1 class="main-title">Adicionar novo registro</h1>
+
+        <form method="post">
+
+            <p class="cont-2">
+
+                <label>Data:</label>
+
+                <input autofocus type="date" name="data" id="data">
+
+                <label>Quantidade:</label>
+
+                <span class="unit-form-field standard">
+            <span class="">
+                <input type="text" name="kg" id="measurement_display_value" class="text short"
+                       data-unit-system="kg"/>
+            </span>
+              <label class="measurement_label unit_label" for="measurement_display_value">kg</label>
+            </span>
+                <input type="submit" class="button  add-new-entry" value="Adicionar novo registro"/>
+            </p>
+        </form>
+
+        <br><Br>
+
         <table class="table0 check-in" summary="check-in">
 
             <colgroup>
@@ -96,33 +121,4 @@ if (isset($_POST['data']) && !empty($_POST['data'])) {
             <?php endforeach; ?>
 
         </table>
-
-        <h1 class="main-title">Adicionar novo registro</h1>
-
-        <form method="post">
-
-            <p class="cont-2">
-
-                <label>Data:</label>
-
-                <input autofocus type="date" name="data" id="data">
-
-                <label>Quantidade:</label>
-
-                <span class="unit-form-field standard">
-
-
-  <span class="">
-    <input type="text" name="kg" id="measurement_display_value" class="text short"
-           data-unit-system="kg"/>
-</span>
-  <label class="measurement_label unit_label" for="measurement_display_value">kg</label>
-
-</span>
-                <input type="submit" class="button  add-new-entry" value="Adicionar novo registro"/>
-
-            </p>
-
-        </form>
-
     </div>

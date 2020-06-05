@@ -82,16 +82,9 @@ if (empty($_SESSION['id_usuario'])) {
                                             <div class="col user-info">
                                                 <div class="ember-view profile-photo">
                                                     <div class="no-image">
-                                                        <?php
-                                                        if (!isset($foto['url'])):
-                                                            ?>
-                                                            <img src="assets/images/perfis/default.jpg" width="120"
-                                                                 height="120">
-                                                        <?php else: ?>
                                                             <img src="assets/images/perfis/<?php echo $foto['url']; ?>"
                                                                  class="img-thumbnail"
                                                                  border="0">
-                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,7 +97,7 @@ if (empty($_SESSION['id_usuario'])) {
                                                         <div class="energy-remaining-details">
                                                             <div class="energy-remaining-number ">
                                                                 <div class="spinner">
-                                                                    <?php
+                                                                <?php
                                                                     require 'classes/Metas.php';
                                                                     $me = new Metas();
 

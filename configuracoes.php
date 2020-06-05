@@ -10,6 +10,36 @@ if (empty($_SESSION['id_usuario'])) {
     exit;
 }
 ?>
+<?php
+
+if (isset($_POST['email']) && !empty($_POST['email'])) {
+    $email = addslashes($_POST['email']);
+
+    $a->editEmail($email, $_SESSION['id_usuario']);
+    ?>
+    <div class="flash">
+        E-mail editado com sucesso!
+    </div>
+    <?php
+}
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])) {
+    $info = $a->getNameLogin($_SESSION['id_usuario']);
+} else {
+    ?>
+    <script type="text/javascript">window.location.href = "configuracoes.php";</script>
+    <?php
+    exit;
+}
+?>
+<?php
+if (isset($_POST['delete']) && !empty($_POST['delete'])) {
+    $excluir = addslashes($_POST['delete']);
+
+
+    $a->excluirConta($excluir, $_SESSION['id_usuario']);
+    header("location: sair.php");
+}
+?>
 
 <link rel="stylesheet" media="screen"
       href="https://d34yn14tavczy0.cloudfront.net/assets/sass/controllers/account-aba6b2a2376db7aab948e58e7e42c06ea3e028f2495b04733338f8927b1c797e.css"/>
@@ -58,18 +88,74 @@ if (empty($_SESSION['id_usuario'])) {
             <div id="settings">
                 <div class="flex">
                     <div class="flex-1">
-                        <h1 class="setting-title">Configurações de conta</h1>
-                        <div class="itemWrapper">
-                            <ol>
-                                <li><a href="alterarsenha.php">Alterar senha</a></li>
-                                <li><a href="alteraremail.php">Alterar endereço de e-mail</a></li>
-                                <li><a href="editarperfil.php">Alterar nome de usuário</a></li>
-                                <li><a href="excluirconta.php">Excluir conta</a></li>
-                            </ol>
+                        <h1 class="main-title">Configurações de conta</h1>
+                        <br>
+                        <br>
+                        <br>
+                        <form method="post">
+                            <h1 class="main-title" style="font-size: 12pt;">Alterar e-mail:</h1>
+                            <div class="block-1">
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">
+                                        E-mail:
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="email" class="form-control"
+                                               id="inputPassword"
+                                               value="<?php echo $info['email']; ?>">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="cont-1">
+
+                                <input type="submit" class="button" value="Salvar alterações"/>
+
+                            </p>
+
+                        </form>
+                        <br>
+                        <br>
+                        <h1 class="main-title" style="font-size: 12pt;">Excluir conta</h1>
+
+                        <div class="block-1">
+                            <div class="header">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">ANTES DE PROSSEGUIR:
+                                        </h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>
+                                            Estou ciente de que isso irá excluir permanentemente minha conta FatCounter,
+                                            que
+                                            minhas informações não poderão ser recuperadas e que esta ação não pode ser
+                                            desfeita.
+                                        </p>
+                                        <p>
+                                            Estou ciente de que perderei permanentemente o acesso a todos os dados
+                                            associados ao
+                                            meu perfil, incluindo dados inseridos de alimentos e peso.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                            <p class="confirm">Tem certeza que deseja excluir sua conta?</p>
+                            <form method="post">
+                                <p class="buttons">
+                                    <input type="submit" name="delete" value="Excluir minha conta"
+                                           class="button delete-button"/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="areaRestrita.php">
+                                        <input type="button" role="button" name="cancel" value="Cancelar"
+                                               class="button style-2"/>
+                                    </a>
+                                </p>
+                            </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

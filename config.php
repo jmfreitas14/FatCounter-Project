@@ -6,6 +6,7 @@ $user = "root";
 $pass = "";
 
 global $pdo;
+
 try {
     $pdo = new PDO($dsn, $user, $pass);
 } catch (PDOException $e) {

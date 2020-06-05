@@ -22,16 +22,28 @@ if (empty($_SESSION['id_usuario'])) {
             <h3 class="secondary-title">
                 Pesquise no nosso banco de dados de alimentos por nome
             </h3>
-            <form method="post">
+            <form method="post" action="adicionaralimento3.php">
 
-                <input class="form-control form-control-lg" type="text" placeholder="Pesquisar" autofocus>
-
-                <div class="resultado">
-
-                </div>
+                <input class="form-control form-control-lg" type="text" name="pesquisar" placeholder="Pesquisar"
+                       autofocus>
 
                 <br>
+                <br>
 
-                <input type="submit" class="button  add-new-entry" value="Adicionar Alimento"/>
-
+                <h1 class="main-title">Resultados</h1>
+                <ul class="resultado">
+                    <tr>
+                        <td class="first alt">
+                            <a class="js-show-edit-food" data-food-entry-id="8166468160" data-locale="pt"
+                               href="alimento.php" style="color: #000;">
+                            </a>
+                        </td>
+                    </tr>
+                </ul>
+                <br>
             </form>
+        </div>
+    </div>
+</div>
+
+

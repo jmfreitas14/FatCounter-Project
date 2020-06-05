@@ -26,7 +26,7 @@ $u = new Usuario();
     </div>
 </div>
 <div class="container">
-    <a href="#" class="nav-link">Esqueceu-se da senha?</a>
+    <!--<a href="#" class="nav-link">Esqueceu-se da senha?</a>--!>
     <div class="navbar justify-content-start">
         <a>Já possui conta?</a>
         <a href="login.php" class="nav-link">Entre</a>

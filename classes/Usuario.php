@@ -61,7 +61,7 @@ class Usuario
     {
         global $pdo;
 
-            $sql = $pdo->prepare("select * from usuario_imagens where id_usuario = :id_usuario");
+            $sql = $pdo->prepare("select * from usuario_imagens where id_usuario = :id_usuario limit 1");
             $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
             $sql->execute();
 
@@ -72,7 +72,7 @@ class Usuario
         global $pdo;
 
         $array = array();
-        $sql = $pdo->prepare("SELECT * FROM usuario_imagens where id_usuario = :id_usuario");
+        $sql = $pdo->prepare("SELECT * FROM usuario_imagens where id_usuario = :id_usuario limit 1");
         $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
         $sql->execute();
 
@@ -124,15 +124,16 @@ class Usuario
         $sql->execute();
     }
 
-    public function inserirFoto($idade, $sexo, $cid, $uf, $fotos)
+    public function inserirFoto($idade, $sexo, $cid, $uf, $fotos, $nome)
     {
         global $pdo;
 
-        $sql = $pdo->prepare("update usuario set idade = :i, sexo = :s, cidade = :cid, uf = :uf where id_usuario = :id");
+        $sql = $pdo->prepare("update usuario set idade = :i, sexo = :s, cidade = :cid, uf = :uf, nome_usuario = :n where id_usuario = :id");
         $sql->bindValue(":i", $idade);
         $sql->bindValue(":s", $sexo);
         $sql->bindValue(":cid", $cid);
         $sql->bindValue(":uf", $uf);
+        $sql->bindValue(":n", $nome);
         $sql->bindValue(":id", $_SESSION['id_usuario']);
         $sql->execute();
 
@@ -163,11 +164,17 @@ class Usuario
                     imagecopyresampled($img, $origi, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
                     imagejpeg($img, 'assets/images/perfis/' . $tmpname, 80);
 
-
                     $sql = $pdo->prepare("insert into usuario_imagens set id_usuario = :id_usuario, url = :url");
                     $sql->bindValue(":id_usuario", $_SESSION['id_usuario']);
                     $sql->bindValue(":url", $tmpname);
                     $sql->execute();
+
+                    if ($sql->rowCount() > 0) {
+                        $sql = $pdo->prepare("update usuario_imagens set url = :url where id_usuario = :id");
+                        $sql->bindValue(":url", $tmpname);
+                        $sql->bindValue(":id", $_SESSION['id_usuario']);
+                        $sql->execute();
+                    }
                 }
             }
         }

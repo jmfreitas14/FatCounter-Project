@@ -16,6 +16,8 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
     $sexo = addslashes($_POST['sexo']);
     $cid = addslashes($_POST['cid']);
     $uf = addslashes($_POST['uf']);
+    $nome = addslashes($_POST['atual']);
+
 
     if (isset($_FILES['fotos'])) {
         $fotos = $_FILES['fotos'];
@@ -23,12 +25,13 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
         $fotos = array();
     }
 
-    $a->inserirFoto($idade, $sexo, $cid, $uf, $fotos);
+    $a->inserirFoto($idade, $sexo, $cid, $uf, $fotos, $nome);
     ?>
     <div class="flash">
         Perfil editado com sucesso!
     </div>
     <?php
+    header('Refresh:0');
 }
 ?>
 
@@ -85,11 +88,20 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
                 <div class="block-1">
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">
+                            Nome de usuário:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="atual" for="inputPassword"
+                                   value="<?php echo $nameuser['nome_usuario']; ?>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">
                             Idade
                         </label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="idade" id="inputPassword"
-                                   placeholder="Quantos anos?" autofocus>
+                                   placeholder="Quantos anos?" value="<?php echo $nameuser['idade']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -98,7 +110,7 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
                         </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="sexo" id="inputPassword"
-                                   placeholder="Qual sexo?">
+                                   placeholder="Qual sexo?" value="<?php echo $nameuser['sexo']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -107,7 +119,7 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
                         </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="cid" id="inputPassword"
-                                   placeholder="Qual a cidade?">
+                                   placeholder="Qual a cidade?" value="<?php echo $nameuser['cidade']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -116,7 +128,7 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
                         </label>
                         <div class="col-sm-10">
                             <input type="text" maxlength="2" class="form-control" name="uf" id="inputPassword"
-                                   placeholder="Qual o estado?">
+                                   placeholder="Qual o estado?" value="<?php echo $nameuser['uf']; ?>">
                             <p style="font-size: 7pt; font-family: Arial, Helvetica, sans-serif;">Duas Letras
                                 somente.</p>
                         </div>

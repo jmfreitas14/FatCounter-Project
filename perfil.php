@@ -71,15 +71,8 @@ if (empty($_SESSION['id_usuario'])) {
                     foreach ($fotos as $foto):
                         ?>
                         <div class="ember-view profile-photo">
-                            <?php
-                            if (empty($foto['url'])):
-                                ?>
-                                <img src="assets/images/perfis/default.jpg" class="img-thumbnail" border="0"
-                                     width="125px" height="125px">
-                            <?php else: ?>
                                 <img src="assets/images/perfis/<?php echo $foto['url']; ?>" class="img-thumbnail"
                                      border="0">
-                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                     <div class="col py-3 px-lg-5">
