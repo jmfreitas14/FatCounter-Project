@@ -33,10 +33,11 @@ if (empty($_SESSION['id_usuario'])) {
                 <h1 class="main-title">Resultados</h1>
                 <ul class="resultado">
                     <?php
+                    $pesquisar = 0;
                     $pesquisar = $_POST['pesquisar'];
 
                     try {
-                    $sql = "SELECT * FROM alimento where Nome_alimento like '%$pesquisar%' limit 10";
+                    $sql = "SELECT * FROM alimento where Nome_alimento like '%$pesquisar%' limit 17";
                     $sql = $pdo->query($sql);
                     ?>
                     <?php
@@ -47,7 +48,7 @@ if (empty($_SESSION['id_usuario'])) {
                         <td class="first alt">
                             <?php
                             echo '<tr>';
-                            echo '<td><a href="adicionaralimento3.1.php?id_alimento=' . $alimento['id_alimento'] .'"> '. $alimento['Nome_alimento'] . '</a></td><br>';
+                            echo '<td><a href="produto.php?id_alimento=' . $alimento['id_alimento'] .'"> '. $alimento['Nome_alimento'] . '</a></td><br>';
                             echo '</tr>';
                             }
                             } else {

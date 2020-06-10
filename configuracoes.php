@@ -105,7 +105,6 @@ if (isset($_POST['delete']) && !empty($_POST['delete'])) {
                                                value="<?php echo $info['email']; ?>">
                                     </div>
                                 </div>
-                            </div>
 
                             <p class="cont-1">
 
@@ -140,7 +139,6 @@ if (isset($_POST['delete']) && !empty($_POST['delete'])) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
                             <p class="confirm">Tem certeza que deseja excluir sua conta?</p>
                             <form method="post">
@@ -154,8 +152,3 @@ if (isset($_POST['delete']) && !empty($_POST['delete'])) {
                                     </a>
                                 </p>
                             </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>

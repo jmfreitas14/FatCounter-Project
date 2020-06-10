@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2b9f64f-4dc7-4950-8dff-07aa58bfa0f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adicionaralimento3.1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adicionaralimento3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alimento.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/alimento.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excluir-alimento.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adicionaralimento.php" beforeDir="false" afterPath="$PROJECT_DIR$/adicionaralimento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adicionaralimento2.php" beforeDir="false" afterPath="$PROJECT_DIR$/adicionaralimento2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/perfis/649d92de4aa4ebde9972c52a60806c03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/perfis/78c5b6724010d2976675ae8ffa25309e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/perfis/default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/plano-de-fundo-index.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/plano-de-fundo-index.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Medida.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Medida.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Usuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adicionaralimento3.1.php" beforeDir="false" afterPath="$PROJECT_DIR$/produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adicionaralimento3.php" beforeDir="false" afterPath="$PROJECT_DIR$/adicionaralimento3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/alimento.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/alimento.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuracoes.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuracoes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editar-dados.php" beforeDir="false" afterPath="$PROJECT_DIR$/editar-dados.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medidas.php" beforeDir="false" afterPath="$PROJECT_DIR$/medidas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu-logado.php" beforeDir="false" afterPath="$PROJECT_DIR$/menu-logado.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,22 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/configuracoes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#!!top" />
-                <element signature="n#style#0;n#h1#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excluirconta.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="570">
+              <caret line="153" column="35" lean-forward="true" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -96,9 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/verifica.php" />
-        <option value="$PROJECT_DIR$/sistema_login/register.php" />
-        <option value="$PROJECT_DIR$/sistema_login/areaRestrita.php" />
         <option value="$PROJECT_DIR$/sistema_login/login.php" />
         <option value="$PROJECT_DIR$/assets/menu-dentro.php" />
         <option value="$PROJECT_DIR$/areaRestrita.php" />
@@ -129,16 +99,12 @@
         <option value="$PROJECT_DIR$/alimento.php" />
         <option value="$PROJECT_DIR$/conexao.php" />
         <option value="$PROJECT_DIR$/proc_pesq_user.php" />
-        <option value="$PROJECT_DIR$/assets/js/script.js" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/adicionaralimento2.php" />
         <option value="$PROJECT_DIR$/modal.php" />
-        <option value="$PROJECT_DIR$/classes/alimento.php" />
         <option value="$PROJECT_DIR$/adicionaralimento3.1.php" />
-        <option value="$PROJECT_DIR$/adicionaralimento3.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/adicionaralimento.php" />
         <option value="$PROJECT_DIR$/perfil.php" />
         <option value="$PROJECT_DIR$/menu-logado.php" />
         <option value="$PROJECT_DIR$/editarperfil.php" />
@@ -146,11 +112,18 @@
         <option value="$PROJECT_DIR$/medidas.php" />
         <option value="$PROJECT_DIR$/classes/Medida.php" />
         <option value="$PROJECT_DIR$/editar-dados.php" />
+        <option value="$PROJECT_DIR$/adicionaralimento3.php" />
+        <option value="$PROJECT_DIR$/adicionarfinal.php" />
+        <option value="$PROJECT_DIR$/produto.php" />
+        <option value="$PROJECT_DIR$/excluir-alimento.php" />
+        <option value="$PROJECT_DIR$/classes/alimento.php" />
+        <option value="$PROJECT_DIR$/assets/js/script.js" />
+        <option value="$PROJECT_DIR$/adicionaralimento.php" />
         <option value="$PROJECT_DIR$/configuracoes.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="792" />
     <option name="y" value="-8" />
     <option name="width" value="816" />
@@ -164,6 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,13 +153,18 @@
             <path>
               <item name="FatCounter" type="b2602c69:ProjectViewProjectNode" />
               <item name="FatCounter" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FatCounter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FatCounter" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,18 +240,20 @@
       <workItem from="1590689849060" duration="12832000" />
       <workItem from="1590772673022" duration="11783000" />
       <workItem from="1591295622782" duration="9646000" />
+      <workItem from="1591706635151" duration="15626000" />
+      <workItem from="1591727416520" duration="21036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238356000" />
+    <option name="totallyTimeSpent" value="275018000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15745501" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16323908" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -297,14 +278,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/menu-dentro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excluir-medida.php" />
     <entry file="file://$PROJECT_DIR$/assets/images/perfis566ee5bd8e272e679c495531ab02ef3c.jpg" />
     <entry file="file://$PROJECT_DIR$/assets/images/perfisded8f6021f8eaa5303f2bffade121713.jpg" />
     <entry file="file://$PROJECT_DIR$/assets/images/perfisf5fb7b47d2b3c1d98ea6222b916a1df5.jpg" />
@@ -319,13 +292,6 @@
     <entry file="file://$PROJECT_DIR$/assets/images/perfis/2ece9204aa3b996d360a2b9b6044508d.jpg" />
     <entry file="file://$PROJECT_DIR$/calc-res.php" />
     <entry file="file://$PROJECT_DIR$/calc.php" />
-    <entry file="file://$PROJECT_DIR$/classes/Metas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/metas.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1867">
@@ -339,16 +305,6 @@
           <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adicionarmetas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/jquery-3.4.1.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -369,20 +325,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conexao.php" />
     <entry file="file://$PROJECT_DIR$/proc_pesq_user.php" />
-    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adicionaralimento2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
@@ -419,45 +365,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alimento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/alimento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adicionaralimento3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adicionaralimento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="130" column="3" selection-start-line="130" selection-start-column="3" selection-end-line="130" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adicionaralimento3.1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -479,34 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editarperfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1731">
-          <caret line="136" column="52" lean-forward="true" selection-start-line="136" selection-start-column="52" selection-end-line="136" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medidas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="103" column="7" lean-forward="true" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Medida.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alterarsenha.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -514,36 +397,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alteraremail.php">
+    <entry file="file://$PROJECT_DIR$/classes/Usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="108" column="51" selection-start-line="108" selection-start-column="51" selection-end-line="108" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editar-dados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+        <state relative-caret-position="-702">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/excluirconta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="128">
+          <caret line="87" column="36" lean-forward="true" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adicionaralimento2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adicionarfinal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adicionarmetas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1980">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Medida.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Metas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editar-dados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excluir-alimento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alteraremail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editarperfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alimento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adicionaralimento3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="55" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/alimento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="46" column="36" lean-forward="true" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medidas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/jquery-3.4.1.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adicionaralimento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="368" column="6" lean-forward="true" selection-start-line="368" selection-start-column="6" selection-end-line="368" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#body#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/configuracoes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#!!top" />
-            <element signature="n#style#0;n#h1#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="570">
+          <caret line="153" column="35" lean-forward="true" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
         </state>
       </provider>
     </entry>
