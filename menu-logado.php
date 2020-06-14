@@ -56,10 +56,6 @@ if (empty($_SESSION['id_usuario'])) {
 
                 </div>
 
-                <div class="ad header">
-                    <div class="ad-slot-banner"></div>
-                </div>
-
                 <div class="content-wrap">
                     <div class="column-left">
                         <div class="layout-panel">
