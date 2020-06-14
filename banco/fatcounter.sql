@@ -43,7 +43,6 @@ CREATE TABLE IF NOT EXISTS `alimento` (
 ) ENGINE=InnoDB AUTO_INCREMENT=815 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.alimento: ~591 rows (aproximadamente)
-DELETE FROM `alimento`;
 /*!40000 ALTER TABLE `alimento` DISABLE KEYS */;
 INSERT INTO `alimento` (`id_alimento`, `Nome_alimento`, `Caloria`, `Proteina`, `Gordura`, `Carboidrato`, `Fibra_alimentar`, `Calcio`, `Magnesio`, `Manganes`, `Fosforo`, `Ferro`, `Sodio`, `Potassio`, `Cobre`, `Zinco`, `Vitamina_c`, `Gordura_saturada`, `Gordura_monoinsaturada`, `Gordura_poliinsaturada`, `quantidade`) VALUES
 	(224, '﻿Arroz, integral, cozido', 124, 2, 1, 25, 2, 5, 59, 0, 106, 0, 1, 75, 0, 0, 0, 0, 0, 0, 0),
@@ -668,7 +667,6 @@ CREATE TABLE IF NOT EXISTS `diario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.diario: ~0 rows (aproximadamente)
-DELETE FROM `diario`;
 /*!40000 ALTER TABLE `diario` DISABLE KEYS */;
 /*!40000 ALTER TABLE `diario` ENABLE KEYS */;
 
@@ -686,7 +684,6 @@ CREATE TABLE IF NOT EXISTS `ingeridos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.ingeridos: ~0 rows (aproximadamente)
-DELETE FROM `ingeridos`;
 /*!40000 ALTER TABLE `ingeridos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ingeridos` ENABLE KEYS */;
 
@@ -700,7 +697,6 @@ CREATE TABLE IF NOT EXISTS `medidas` (
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.medidas: ~2 rows (aproximadamente)
-DELETE FROM `medidas`;
 /*!40000 ALTER TABLE `medidas` DISABLE KEYS */;
 INSERT INTO `medidas` (`id_peso`, `id_usuario`, `result_peso`, `idata`) VALUES
 	(16, 13, 75, '2020-05-24'),
@@ -717,7 +713,6 @@ CREATE TABLE IF NOT EXISTS `metas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.metas: ~0 rows (aproximadamente)
-DELETE FROM `metas`;
 /*!40000 ALTER TABLE `metas` DISABLE KEYS */;
 /*!40000 ALTER TABLE `metas` ENABLE KEYS */;
 
@@ -733,7 +728,6 @@ CREATE TABLE IF NOT EXISTS `tmb` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.tmb: ~2 rows (aproximadamente)
-DELETE FROM `tmb`;
 /*!40000 ALTER TABLE `tmb` DISABLE KEYS */;
 INSERT INTO `tmb` (`id_tmb`, `caloria`, `proteina`, `carboidrato`, `gordura`, `id_usuario`) VALUES
 	(6, '2310', '150', '250', '32', 17),
@@ -766,7 +760,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.usuario: ~3 rows (aproximadamente)
-DELETE FROM `usuario`;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `email`, `senha`, `id_diario`, `id_meta`, `id_peso`, `id_tmb`, `idade`, `sexo`, `cidade`, `uf`) VALUES
 	(13, 'Joao Miguel', 'joaomigueldf.23@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, NULL, NULL, NULL, '21', 'Masculino', 'Brasília', 'DF'),
@@ -783,7 +776,6 @@ CREATE TABLE IF NOT EXISTS `usuario_imagens` (
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela fatcounter.usuario_imagens: ~8 rows (aproximadamente)
-DELETE FROM `usuario_imagens`;
 /*!40000 ALTER TABLE `usuario_imagens` DISABLE KEYS */;
 INSERT INTO `usuario_imagens` (`id`, `id_usuario`, `url`) VALUES
 	(11, 13, '6ac3bfcb975465703f9eb1e6edc0c5b5.jpg'),
