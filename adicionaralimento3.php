@@ -48,7 +48,7 @@ if (empty($_SESSION['id_usuario'])) {
                         <td class="first alt">
                             <?php
                             echo '<tr>';
-                            echo '<td><a href="produto.php?id_alimento=' . $alimento['id_alimento'] .'"> '. $alimento['Nome_alimento'] . '</a></td><br>';
+                            echo '<td data-toggle="modal" data-target="#janela"><a href="produto.php?id_alimento=' . $alimento['id_alimento'] . '"> ' . $alimento['Nome_alimento'] . '</a></td><br>';
                             echo '</tr>';
                             }
                             } else {

@@ -59,20 +59,38 @@ if (empty($_SESSION['id_usuario'])) {
             <div class="container px-lg-3">
                 <div class="row mx-lg-n3">
                     <div class="col user-info">
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #0f73ab;">
-                            <?php echo $nameuser['nome_usuario']; ?></p>
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;"><?php echo $nameuser['idade']; ?></p>
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;"><?php echo $nameuser['sexo']; ?></p>
-                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; color: #0f73ab;"><?php echo $nameuser['cidade']; ?>
-                            - <?php echo $nameuser['uf']; ?></p>
+                        <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                            Nome de perfil: <?php echo $nameuser['nome_usuario']; ?></p>
+                        <?php if (isset($nameuser['idade'])): ?>
+                            <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                                Idade: <?php echo $nameuser['idade']; ?></p>
+                        <?php else: ?>
+                            <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                                Idade: 18</p>
+                        <?php endif; ?>
+                        <?php if (isset($nameuser['sexo'])): ?>
+                            <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                                Sexo: <?php echo ucfirst($nameuser['sexo']); ?></p>
+                        <?php else: ?>
+                            <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                                Sexo: Masculino</p>
+                        <?php endif; ?>
+                        <?php if (isset($nameuser['cidade'])): ?>
+                            <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                                Cidade: <?php echo ucfirst($nameuser['cidade']); ?>
+                                - <?php echo strtoupper($nameuser['uf']); ?></p>
+                        <?php else: ?>
+                            <p style="font-size: 12pt; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; color: #0f73ab;">
+                                Cidade: Brasília - DF</p>
+                        <?php endif; ?>
                     </div>
                     <?php
                     $fotos = $a->getMinhasFotos();
                     foreach ($fotos as $foto):
                         ?>
                         <div class="ember-view profile-photo">
-                                <img src="assets/images/perfis/<?php echo $foto['url']; ?>" class="img-thumbnail"
-                                     border="0">
+                            <img src="assets/images/perfis/<?php echo $foto['url']; ?>" class="img-thumbnail"
+                                 border="0">
                         </div>
                     <?php endforeach; ?>
                     <div class="col py-3 px-lg-5">

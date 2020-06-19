@@ -177,8 +177,13 @@ if (isset($_POST['kcl']) && !empty($_POST['kcl'])) {
             </div>
         <?php endforeach; ?>
         <br>
+        <?php
+        if (isset($info['caloria'])):
+        ?>
         <a class="button" href="editarmetas.php">Editar</a>
+        <?php else: ?>
         <a class="button" href="adicionarmetas.php">Adicionar metas</a>
+        <?php endif; ?>
     </form>
 </div>
 </body>

@@ -272,7 +272,6 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
 
                         <td class="first">Restantes</td>
 
-
                         <td name="kcl_restante"
                             class="<?php echo ($info['caloria'] > $soma['calorias']) ? 'positive' : 'negative'; ?>
                             "><?php echo $infor['caloriar']; ?></td>
