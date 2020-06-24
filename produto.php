@@ -28,8 +28,10 @@ if (isset($_POST['Nome_alimento']) && !empty($_POST['Nome_alimento'])) {
     <div class="flash">
         Alimento adicionado com sucesso!
     </div>
+
+    <script type="text/javascript">window.location.href = "adicionaralimento.php";</script>
     <?php
-    header('Location: adicionaralimento.php');
+    exit;
 }
 ?>
 <?php

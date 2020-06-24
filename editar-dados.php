@@ -129,8 +129,7 @@ if (isset($_POST['idade']) && !empty($_POST['idade'])) {
                         <div class="col-sm-10">
                             <input type="text" maxlength="2" class="form-control" name="uf" id="inputPassword"
                                    placeholder="Qual o estado?" value="<?php echo $nameuser['uf']; ?>">
-                            <p style="font-size: 7pt; font-family: Arial, Helvetica, sans-serif;">Duas Letras
-                                somente.</p>
+                            <p style="font-size: 7pt; font-family: Arial, Helvetica, sans-serif;">Duas Letras somente. UF é a abreviação de estado.</p>
                         </div>
                     </div>
                 </div>

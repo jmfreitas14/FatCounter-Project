@@ -56,6 +56,7 @@ if (isset($_POST['data']) && !empty($_POST['data'])) {
     }
 </style>
 
+
 <div id="wrap">
 
     <div id="content">
@@ -85,7 +86,7 @@ if (isset($_POST['data']) && !empty($_POST['data'])) {
 
         <br><Br>
 
-        <table class="table0 check-in" summary="check-in">
+        <table class="table0 check-in" summary="check-in" id="tabela-med">
 
             <colgroup>
                 <col class="col-1"/>

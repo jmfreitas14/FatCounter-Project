@@ -31,24 +31,12 @@ class alimento
         $sql->execute();
     }
 
-    public function concluirRegistro($tk, $tc, $tg, $tp, $mk, $mc, $mg, $mp, $kr, $cr, $gr, $pr)
+    public function concluirRegistro()
     {
         global $pdo;
 
-        $sql = $pdo->prepare("INSERT INTO diario(data_registro, id_usuario, total_kcl, total_carbo, total_proteina, total_gordura, meta_kcl, meta_carbo, meta_proteina, meta_gordura, kcl_restante, carbo_restante, proteina_restante, gordura_restante) values (now(), :id, :tk, :tc, :tp, :tg, :mk, :mc, :mp, :mg, :kr, :cr, :pr, :gr)");
-        $sql->bindValue(':id', $_SESSION['id_usuario']);
-        $sql->bindValue(':tk', $tk);
-        $sql->bindValue(':tc', $tc);
-        $sql->bindValue(':tg', $tg);
-        $sql->bindValue(':tp', $tp);
-        $sql->bindValue(':mk', $mk);
-        $sql->bindValue(':mc', $mc);
-        $sql->bindValue(':mg', $mg);
-        $sql->bindValue(':mp', $mp);
-        $sql->bindValue(':kr', $kr);
-        $sql->bindValue(':cr', $cr);
-        $sql->bindValue(':gr', $gr);
-        $sql->bindValue(':pr', $pr);
+        $sql = $pdo->prepare("delete from ingeridos where id_usuario = :id");
+        $sql->bindValue(":id", $_SESSION['id_usuario']);
         $sql->execute();
     }
 

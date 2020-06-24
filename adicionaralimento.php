@@ -321,6 +321,8 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
                     </tr>
                     </tfoot>
                 </table>
+                <a class="button complete-this-day-button" href="concluirregistro.php" style="margin-left: 42%;">Limpar Registro</a>
+
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script type="text/javascript">
                     google.charts.load('current', {'packages': ['corechart']});
