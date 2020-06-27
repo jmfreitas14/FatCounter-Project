@@ -36,7 +36,7 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
     <?php
 }
 
-
+$date = new DateTime();
 ?>
 
 <html lang="pt">
@@ -45,6 +45,14 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
 
     <link rel="stylesheet" media="screen"
           href="https://d34yn14tavczy0.cloudfront.net/assets/sass/application-e114c1bd8d8826f0b79675f360bd821ba291aca3b900a14a0cbfce77d4a8c5f2.css"/>
+    <link rel="stylesheet" media="screen"
+          href="https://d34yn14tavczy0.cloudfront.net/assets/sass/application-e114c1bd8d8826f0b79675f360bd821ba291aca3b900a14a0cbfce77d4a8c5f2.css"/>
+    <link rel="stylesheet" media="all"
+          href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" media="all"
+          href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-awesome/css/font-awesome-ie7.min.css"/>
+    <link rel="stylesheet" media="all"
+          href="https://d34yn14tavczy0.cloudfront.net/stylesheets/font-mfizz/font-mfizz.css"/>
 
 </head>
 
@@ -80,21 +88,16 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
 </style>
 
 <div id="wrap">
-    <form method="post">
 
-        <div id="content">
+    <div id="content">
 
-            <div id="main">
+        <div id="main">
 
-                <div class="diary">
+            <div class="diary">
 
-                    <h1>Seu diário de alimentos:</h1>
-
-                </div>
-
+                <h1>Seu diário de alimentos:</h1>
 
             </div>
-
 
             <div class="food_container container">
 
@@ -146,9 +149,9 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
                         ?>
 
                         <td class="first alt">
-                            <a>
+                            <span>
                                 <?php echo $info['nome_alimento']; ?>
-                            </a>
+                            </span>
                         </td>
 
 
@@ -321,7 +324,14 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
                     </tr>
                     </tfoot>
                 </table>
-                <a class="button complete-this-day-button" href="concluirregistro.php" style="margin-left: 42%;">Limpar Registro</a>
+
+                <span class="day_incomplete_message" style="margin-left: 26%; font-weight: bold;">
+                    Quando você terminar de registrar todos os alimentos para este dia, clique aqui:
+
+                    <br><br>
+
+                    <a class="button complete-this-day-button" href="concluirregistro.php" style="margin-left: 42%;">Limpar Registro</a>
+                </span>
 
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script type="text/javascript">
@@ -368,7 +378,6 @@ if (isset($_POST['total_kcl']) && !empty($_POST['total_kcl'])) {
 </body>
 </div>
 </div>
-</form>
 </div>
 </body>
 </html>

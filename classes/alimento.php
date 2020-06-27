@@ -21,13 +21,14 @@ class alimento
     {
         global $pdo;
 
-        $sql = $pdo->prepare("insert into ingeridos(id_usuario, Nome_alimento, Caloria, Proteina, Carboidrato, Gordura) values (:id, :n, :kcl, :prot, :carbo, :gord)");
+        $sql = $pdo->prepare("insert into ingeridos(id_usuario, Nome_alimento, Caloria, Proteina, Carboidrato, Gordura, data) values (:id, :n, :kcl, :prot, :carbo, :gord, NOW())");
         $sql->bindValue(':id', $_SESSION['id_usuario']);
         $sql->bindValue(':n', $nome);
         $sql->bindValue(':kcl', $cal);
         $sql->bindValue(':prot', $prot);
         $sql->bindValue(':carbo', $carbo);
         $sql->bindValue(':gord', $gord);
+
         $sql->execute();
     }
 
@@ -45,7 +46,7 @@ class alimento
         $array = array();
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT * FROM ingeridos where id_usuario = (select id_usuario from usuario where id_usuario = :id)");
+        $sql = $pdo->prepare("SELECT * FROM ingeridos where id_usuario = :id ");
         $sql->bindValue(":id", $_SESSION['id_usuario']);
         $sql->execute();
 
